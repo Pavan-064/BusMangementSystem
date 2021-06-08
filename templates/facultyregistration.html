@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Velocity - Faculty Registration</title>
+	    <!-- Font -->
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+	    <!-- CSS -->
+	    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<form action="register" method="POST">
+			{% csrf_token %}
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark"style="background-color: blueviolet;>
+		    <a class="navbar-brand" href="#">
+		        <img src="{% static 'img/newlogo.jpg' %}" width="50" height="40" class="d-inline-block align-top" alt="Company Logo" loading="lazy">
+		    </a>
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		    </button>
+
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		        <ul class="navbar-nav mr-auto">
+		            <li class="nav-item">
+		                <a class="nav-link" href="bus/index">Home </a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="bus/announcements">Announcements</span></a>
+		            </li>
+		        </ul>
+		    </div>
+	    </nav>
+	    <div class="container" ; style="padding: 100px;">
+	    	<hr>
+	    	<h1 style="text-align: center;">FACULTY REGISTRATION</h1>
+	    	<hr>
+	    	<form>
+	    		<label for="StudentName">Name</label>
+	    		<div class="form-row">
+				    <div class="col">
+				      	<input type="text" class="form-control" required="" placeholder="First name">
+				    </div>
+				    <div class="col">
+				      	<input type="text" class="form-control" placeholder="Last name">
+				    </div>
+				</div>
+				<br>
+				<div class="form-row col-md-4" >
+					<label for="StudentPhone">Phone Number</label>
+					<input type="text" class="form-control" required="">
+				</div>
+				<br>
+				<div class="form-row col-md-4" >
+					<label for="StudentUSN">ID</label>
+					<input type="text" class="form-control" required="">
+				</div>
+				<br>
+			  	<div class="form-group">
+			      <label for="inputEmail">Email</label>
+			      <input type="email" class="form-control" required="" id="inputEmail4">
+			    </div>
+			  <div class="form-group">
+			    <label for="inputAddress">Address line 1</label>
+			    <input type="text" class="form-control" id="inputAddress" required="" placeholder="Door number,   House/Apartment name,   Floor">
+			  </div>
+			  <div class="form-group">
+			    <label for="inputAddress2">Address line 2</label>
+			    <input type="text" class="form-control" id="inputAddress2" required="" placeholder="Street,   Locality">
+			  </div>
+			  <div class="form-row">
+			    <div class="form-group col-md-4">
+			      <label for="inputCity">City</label>
+			      <input class="form-control" type="text" placeholder="Bengaluru" readonly>
+			    </div>
+			    <div class="form-group col-md-4">
+			      <label for="inputState">State</label>
+			      <input class="form-control" type="text" placeholder="Karnataka" readonly>
+			    </div>
+			    <div class="form-group col-md-4">
+			      <label for="inputZip">Pin Code</label>
+			      <input type="text" class="form-control" id="inputZip" required="">
+			    </div>
+			  </div>
+			  <br>
+			  <div class="input-group mb-3 col-md-6">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="inputGroupSelect01">Department</label>
+				  </div>
+				  <select class="custom-select" id="inputGroupSelect01">
+				    <option selected>Choose...</option>
+				    <option value="1">Civil Engineering</option>
+				    <option value="2">Computer Science and Engineering</option>
+				    <option value="3">Electronics and Communication Engineering</option>
+				    <option value="4">Electronics and Instrumentation Engineering</option>
+				    <option value="5">Industrial Engineering and Management</option>
+				    <option value="6">Information Science and Engineering</option>
+				    <option value="7">Mechanical Engineering</option>
+				    <option value="8">Maths</option>
+				    <option value="9">Physics</option>
+				    <option value="10">Chemistry</option>
+				  </select>
+			  </div>
+			  <br>
+			  <div class="input-group mb-3 col-md-3">
+				  <div class="input-group-prepend">
+				    <label class="input-group-text" for="inputGroupSelect01">Route</label>
+				  </div>
+				  <select class="custom-select" id="inputGroupSelect01">
+				    <option selected>Choose...</option>
+				    <option value="1">1</option>
+				    <option value="2">2</option>
+				    <option value="3">3</option>
+				  </select>
+			  </div>
+			  <div class="form-group">
+			    <div class="form-check">
+			      <input class="form-check-input" type="checkbox" id="gridCheck">
+			      <label class="form-check-label" for="gridCheck">
+			        I Agree to terms and conditions
+			      </label>
+			    </div>
+			  </div>
+			  
+				<button type="button" class="btn btn-lg btn-primary" id="bookbutton" data-toggle="modal" data-target="#exampleModal">
+				  Register
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Success!!</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        Your application has been submitted to the college. <br>
+				        You will reveive a SMS after verification.
+				      </div>
+				      <div class="modal-footer">
+				        <a class="btn btn-lg btn-primary" id="bookbutton" href="bus/index" role="button">OK</a>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</form>
+	    </div>
+		<footer>
+	        <div class="row">
+	            <div class="col-sm-4">
+	                <img src="{% static 'img/logo.png' %}" width="200" height="150" alt="Company Logo">
+	            </div>
+	            <div class="col-sm-4">
+	                <p><a href="bus/about" class="footerlinks">About</a></p>
+	                <p><a href="" class="footerlinks">Privacy Policy</a></p>
+    	            <p><a href="" class="footerlinks">Terms and Conditions</a></p>
+	            </div>
+	            <div class="col-sm-4">
+	                <p>Contact Us: </p>
+	                <p>Phone : +91 9988667755</p>
+	                <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new" class="footerlinks">Email : support@velocity.com</a></p>
+	            </div>            
+	        </div>
+	        <p class="text-center">Copyright &copy; Velocity 2020. All rights reserved.</p>
+	        <p class="text-center">Made with &hearts; in India</p>
+	    </footer>
+	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	</form>
+	<div>
+		{% for message in messages %}
+		<h3> {{message}}</h3>
+		{% endfor %}
+	</div>  
+</body>
+</html>
