@@ -1,0 +1,92 @@
+/*	font style*/
+*{
+	font-family: Roboto;
+}
+
+*h1{
+	text-align: center;
+}
+
+/*  image center align*/
+.center {
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+/* Nav bar*/
+#loginmenu:hover{
+	background-color: blueviolet;
+	color: white;
+}
+
+/* Carousel */
+#gallery{
+	height:550px;
+}
+
+/*	services and features*/
+#services_features{
+	margin-top: 50px;
+}
+#desc{
+	margin-top: 20px;
+}
+
+.services-column{
+	padding: 20px;
+}
+
+/*	book, login, search buttons*/
+#bookbutton{
+	margin-top: 20px;
+	color: white;
+	background-color: blueviolet;
+	border-color: black;
+}
+
+#bookbutton:hover{
+	background-color: white;
+	color: blueviolet;
+	border-color: blueviolet;
+}
+
+/* display logo */
+.imgdisplay{
+	margin-top: 100px; 
+	margin-left: 40%; 
+}
+
+/* login/signup form elements */
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.links{
+	color: blueviolet;
+}
+
+.links:hover{
+	color: black;
+}
+
+/*	footer style*/
+
+footer{
+	background-color: lavender;
+	margin-top: 70px;
+	padding: 20px;
+}
+
+.footerlinks{
+	color: black;
+}
+
+.footerlinks:hover{
+	color: blueviolet;
+}
